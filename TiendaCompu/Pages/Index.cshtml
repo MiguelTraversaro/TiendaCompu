@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-3 fw-bold">Bienvenido a TiendaCompu</h1>
+    <p class="lead">Tu tienda especializada en hardware y armado de PCs de alto rendimiento.</p>
+    
+    <div class="my-4">
+        <img src="~/img/tienda.png" alt="TiendaCompu" class="img-fluid rounded shadow-sm" style="max-height: 400px; object-fit: cover;" />
+    </div>
+
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a asp-page="/Consulta" class="btn btn-primary btn-lg px-4 gap-3">Ver Catálogo Completo</a>
+    </div>
+</div>

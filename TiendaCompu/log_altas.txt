@@ -1,0 +1,3 @@
+[10/10/2026 18:03:24] Se agregó el producto: RTX 4060 - Precio: $500 - Categoría: Placa de video - IdCategoría: 2
+[10/10/2026 18:17:06] Se agregó el producto: RTX 4060 - Precio: $400 - Categoría: Placa de video - IdCategoría: 2
+[10/10/2026 18:41:03] Se agregó el producto: i9 9990 - Precio: $1000 - Categoría: Procesador - IdCategoría: 1

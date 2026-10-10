@@ -1,0 +1,53 @@
+﻿@page
+@model TiendaCompu.Pages.AltaModel
+@{
+    ViewData["Title"] = "Alta de Producto";
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <h2 class="text-center mb-4">Ingresar Nuevo Producto</h2>
+
+        @if (!string.IsNullOrEmpty(Model.MensajeExito))
+        {
+            <div class="alert alert-success">@Model.MensajeExito</div>
+        }
+        @if (!string.IsNullOrEmpty(Model.MensajeError))
+        {
+            <div class="alert alert-danger">@Model.MensajeError</div>
+        }
+
+        <div class="card bg-dark text-white border-info">
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre del Componente</label>
+                        <input type="text" class="form-control" asp-for="Nombre" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Precio ($)</label>
+                        <input type="number" step="0.01" class="form-control" asp-for="Precio" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Categoría</label>
+                        <select class="form-select" asp-for="IdCategoria" required>
+                            <option value="">Seleccione una categoría...</option>
+                            <option value="1">Procesador</option>
+                            <option value="2">Placa de video</option>
+                            <option value="3">Memoria</option>
+                            <option value="4">Motherboard</option>
+                            <option value="5">Almacenamiento</option>
+                        </select>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                        <a asp-page="/Index" class="btn btn-outline-secondary">Volver al Inicio</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@page
+@model TiendaCompu.Pages.BajaModel
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<div class="text-center mb-4 mt-4">
+    <h2>Baja de Componentes</h2>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.MensajeExito))
+{
+    <div class="alert alert-success">@Model.MensajeExito</div>
+}
+@if (!string.IsNullOrEmpty(Model.MensajeError))
+{
+    <div class="alert alert-danger">@Model.MensajeError</div>
+}
+
+<form method="post">
+    <table class="table table-dark table-bordered table-striped mt-4">
+        <thead class="table-dark" style="border-bottom: 2px solid #00c3ff;">
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Componente</th>
+                <th>Precio ($)</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prod in Model.ListaProductos)
+            {
+                <tr>
+                    <td class="align-middle">@prod.Id</td>
+                    <td class="align-middle">@prod.Nombre</td>
+                    <td class="align-middle">@prod.Precio</td>
+                    <td class="align-middle">@prod.CategoriaDesc</td>
+                    <td class="align-middle text-center">
+
+                        <button type="submit"
+                                asp-page-handler="Eliminar"
+                                asp-route-idProducto="@prod.Id"
+                                class="btn btn-danger btn-sm fw-bold"
+                                onclick="return confirm('¿Está seguro de que desea eliminar el producto: @prod.Nombre?');">
+                            Eliminar
+                        </button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+
+<div class="mt-4 text-center mb-5">
+    <a asp-page="/Index" class="btn btn-outline-secondary">Volver al Inicio</a>
+</div>
